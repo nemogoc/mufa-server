@@ -38,5 +38,13 @@ exports.createLeague = async function(req, res, next) {
     }
 }
 
-//TODO: implement below
-exports.deleteLeague = async function(req, res, next) {}
+exports.deleteLeague = async function(req, res, next) {
+    try {
+        let foundLeague = await db.League.findOneAndDelete(req.params.messageId);
+    
+        return res.status(200).json(foundLeague);
+      }
+      catch(err){
+        return next(err);
+      }
+}
