@@ -12,7 +12,7 @@ exports.getLeagues = async function(req, res, next) {
 
 exports.getLeague = async function(req, res, next) {
     try {
-        let league = await db.League.findById(req.params.id); //TODO: messageId?
+        let league = await db.League.findById(req.params.leagueId);
         return res.status(200).json(league);
     }
     catch(err) {
@@ -21,7 +21,7 @@ exports.getLeague = async function(req, res, next) {
 }
 
 exports.createLeague = async function(req, res, next) {
-    const {year, season, weekday} = req.params;
+    const {year, season, weekday} = req.body;
     try {
         let league = await db.League.create({
             year,
