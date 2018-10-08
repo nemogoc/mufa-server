@@ -8,7 +8,7 @@ exports.getLeagues = async function(req, res, next) {
     catch(err) {
         return next(err);
     }
-}
+};
 
 exports.getLeague = async function(req, res, next) {
     try {
@@ -18,7 +18,7 @@ exports.getLeague = async function(req, res, next) {
     catch(err) {
         return next(err);
     }
-}
+};
 
 exports.createLeague = async function(req, res, next) {
     const {year, season, weekday} = req.body;
@@ -36,7 +36,7 @@ exports.createLeague = async function(req, res, next) {
     catch(err) {
         return next(err);
     }
-}
+};
 
 exports.deleteLeague = async function(req, res, next) {
     try {
@@ -47,4 +47,4 @@ exports.deleteLeague = async function(req, res, next) {
       catch(err){
         return next(err);
       }
-}
+};

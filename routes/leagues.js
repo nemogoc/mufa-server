@@ -5,7 +5,7 @@ router = express.Router({ mergeParams: true}),
 
 router.route("/")
 .get(getLeagues)
-.post(createLeague)
+.post(createLeague);
 
 router.route("/:leagueId")
 .get(getLeague)
