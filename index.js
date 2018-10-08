@@ -1,8 +1,9 @@
+require("dotenv").config();
 const express = require('express'),
-app = express(),
-bodyParser = require("body-parser"),
-errorHandler = require('./handlers/error'),
-leagueRoutes = require('./routes/leagues');
+  app = express(),
+  bodyParser = require("body-parser"),
+  errorHandler = require('./handlers/error'),
+  leagueRoutes = require('./routes/leagues');
 
 const PORT = 8081;
 

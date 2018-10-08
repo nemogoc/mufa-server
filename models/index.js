@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 //TODO: parameterize debug and mongo URL
-mongoose.set("debug", true);
+mongoose.set("debug", process.env.DEBUG || false);
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost:27017/mufa", {
+mongoose.connect(process.env.DB_HOST, {
   keepAlive: true,
 });
 
