@@ -7,3 +7,4 @@ mongoose.connect(process.env.DB_HOST, {
 });
 
 module.exports.League = require("./league");
+module.exports.Team = require("./team");

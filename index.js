@@ -3,7 +3,8 @@ const express = require('express'),
   app = express(),
   bodyParser = require("body-parser"),
   errorHandler = require('./handlers/error'),
-  leagueRoutes = require('./routes/leagues');
+  leagueRoutes = require('./routes/leagues'),
+  teamRoutes = require('./routes/teams');
 
 const PORT = 8081;
 
@@ -11,6 +12,7 @@ app.use(bodyParser.json());
 
 //routes
 app.use("/api/v1/league", leagueRoutes);
+app.use("/api/v1/team", teamRoutes);
 
 app.use(errorHandler);
 

@@ -1,15 +1,16 @@
 const express = require('express'),
   router = express.Router({ mergeParams: true}),
-  { getTeams, getTeam, createTeam, deleteTeam } = require("../handlers/teams");
+  { getTeams, getTeam, createTeam, deleteTeam, updateTeam } = require("../handlers/teams");
 
 
 router.route("/")
   .get(getTeams)
-  // .post(createTeam);
+  .post(createTeam);
 
 router.route("/:teamId")
   .get(getTeam)
-  // .delete(deleteTeam);
+  .put(updateTeam)
+  .delete(deleteTeam);
 
 
 module.exports = router;

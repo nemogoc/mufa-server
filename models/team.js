@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const teamSchema = new mongoose.Schema({
+const teamSchema = new mongoose.Schema({ //TODO: set required fields
     name: String,
     logoUrl: String,
-    rating: Number,
+    rating: Number, //TODO: set this by default
     wins: Number,
     losses: Number,
     jerseyColor: String,
