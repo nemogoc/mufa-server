@@ -50,7 +50,7 @@ exports.updateLeague = async function(req, res, next) {
 
 exports.deleteLeague = async function(req, res, next) {
     try {
-        let foundLeague = await db.League.findOneAndDelete(req.params.messageId);
+        let foundLeague = await db.League.findByIdAndDelete(req.params.messageId);
         return res.status(200).json(foundLeague);
       }
       catch(err){
