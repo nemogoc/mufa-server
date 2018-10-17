@@ -32,7 +32,7 @@ exports.createTeam = async function(req, res, next) {
   //     locations: []
   //   });
   //TODO: add team to league. maybe in model like with messages? (if so, can't use findOneAndDelete?)
-  //   return res.status(200).json(league);
+  //   return res.status(201).json(league);
   // }
   // catch(err) {
   //   return next(err);

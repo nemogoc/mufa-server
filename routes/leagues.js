@@ -1,6 +1,6 @@
 const express = require('express'),
   router = express.Router({ mergeParams: true}),
-  { getLeagues, getLeague, createLeague, deleteLeague } = require("../handlers/leagues");
+  { getLeagues, getLeague, createLeague, deleteLeague, updateLeague } = require("../handlers/leagues");
 
 
 router.route("/")
@@ -9,6 +9,7 @@ router.route("/")
 
 router.route("/:leagueId")
   .get(getLeague)
+  .put(updateLeague)
   .delete(deleteLeague);
 
 
