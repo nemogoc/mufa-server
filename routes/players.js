@@ -10,7 +10,7 @@ router.route("/")
 router.route("/:playerId")
   .get(getPlayer)
   .put(updatePlayer)
-  .delete(deletePlayer());
+  .delete(deletePlayer);
 
 
 module.exports = router;
