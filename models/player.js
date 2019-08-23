@@ -2,19 +2,17 @@ const mongoose = require('mongoose');
 
 const playerSchema = new mongoose.Schema({
     username: String,
-    password: String, //TODO: fix this
+    password: String, //TODO: store this correctly
     firstName: String,
     lastName: String,
     zipCode: Number,
     sex: String,
     email: String,
-    dob: Number, //TODO: is there a Date?
-    teams: [Number], //[mongoose.Schema.Types.ObjectId],
-    league: [Number]
+    dateOfBirth: Date //YYYY-MM-DD
   },
-    {
-        timestamps: true
-    }
+  {
+    timestamps: true
+  }
 );
 
 const Player = mongoose.model('Player', playerSchema);
