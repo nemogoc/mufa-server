@@ -1,6 +1,6 @@
 const express = require('express'),
   router = express.Router({ mergeParams: true}),
-  { getPlayers, getPlayer, createPlayer, deletePlayer, updatePlayer } = require("../handlers/players");
+  { getPlayers, getPlayer, createPlayer, deletePlayer, updatePlayer, login } = require("../handlers/players");
 
 
 router.route("/")
@@ -12,5 +12,6 @@ router.route("/:playerId")
   .put(updatePlayer)
   .delete(deletePlayer);
 
+// router.route("/:playerId/login").post(login); 
 
 module.exports = router;

@@ -1,11 +1,15 @@
-const db = require("../models");
+const db = require("../models"),
+  bcrypt = require('bcrypt');
 
 exports.createPlayer = async function(req, res, next) {
+  const saltRounds = 10;
   const {username, password, firstName, lastName, zipCode, sex, email, dateOfBirth} = req.body;
+  const hash = await bcrypt.hash(password, saltRounds);
+
   try {
     let player = await db.Player.create({
       username,
-      password, //TODO: store this correctly
+      password: hash,
       firstName,
       lastName,
       zipCode,
@@ -60,3 +64,20 @@ exports.deletePlayer = async function(req, res, next) {
     return next(err);
   }
 };
+
+exports.login = async function(req, res, next) {
+  try {
+    let player = await db.Player.findById(req.params.playerId);
+    let loggedIn = await checkUser(player._id, req.body.password);
+    return res.status(200).json("loggedIn: " + loggedIn);
+  }
+  catch(err) {
+    return next(err);
+  }
+};
+
+async function checkUser(playerId, password) {
+  let player = await db.Player.findById(playerId);
+
+  return await bcrypt.compare(password, player.password);
+}
