@@ -23,7 +23,7 @@ exports.createTeam = async function(req, res, next) {
 
 exports.getTeams = async function(req, res, next) {
   try {
-    let teams = await db.Team.find().sort({name: "asc"}); //TODO: does this sort? if not, replace with name: 1
+    let teams = await db.Team.find().sort({name: "asc"});
     return res.status(200).json(teams);
   }
   catch(err) {

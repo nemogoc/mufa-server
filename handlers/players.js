@@ -23,7 +23,7 @@ exports.createPlayer = async function(req, res, next) {
 
 exports.getPlayers = async function(req, res, next) {
   try {
-    let players = await db.Player.find().sort({name: "asc"}); //TODO: does this sort? if not, replace with name: 1
+    let players = await db.Player.find().sort({lastName: "asc"});
     return res.status(200).json(players);
   }
   catch(err) {

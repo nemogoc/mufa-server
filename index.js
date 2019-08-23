@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 //routes
 app.use("/api/v1/league", leagueRoutes);
 app.use("/api/v1/team", teamRoutes);
-app.use("/api/v1/players", playerRoutes);
+app.use("/api/v1/player", playerRoutes);
 
 app.use(errorHandler);
 

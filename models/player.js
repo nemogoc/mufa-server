@@ -8,9 +8,7 @@ const playerSchema = new mongoose.Schema({
     zipCode: Number,
     sex: String,
     email: String,
-    dateOfBirth: String //TODO: Date?
-    // teams: [Number], //[mongoose.Schema.Types.ObjectId],
-    // locations: [Number]
+    dateOfBirth: Date //YYYY-MM-DD
   },
   {
     timestamps: true
